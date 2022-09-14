@@ -1,7 +1,7 @@
 {
   "name": "react-js-cron-mui",
   "version": "1.0.0",
-  "description": "A React cron editor with Material UI a forked repo from Xavier Rutayisire (https://github.com/xrutayisire/react-js-cron)",
+  "description": "A React cron editor with Mui5 a forked repo from Xavier Rutayisire (https://github.com/xrutayisire/react-js-cron)",
   "author": "Itay Levy (https://github.com/levyitay/)",
   "license": "MIT",
   "keywords": [
@@ -16,15 +16,15 @@
     "mui",
     "material-ui"
   ],
-  "homepage": "https://github.com/levyitay/react-js-cron-mui#readme",
+  "homepage": "https://github.com/levashovn/react-js-cron-mui5#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/levyitay/react-js-cron-mui.git"
+    "url": "git+https://github.com/levashovn/react-js-cron-mui5.git"
   },
   "bugs": {
-    "url": "https://github.com/levyitay/react-js-cron-mui/issues"
+    "url": "https://github.com/levashovn/react-js-cron-mui5/issues"
   },
- 
+
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
   "types": "dist/cjs/index.d.ts",
@@ -40,10 +40,9 @@
     "prettier": "prettier --write 'src/**/*.{ts?(x),css}'"
   },
   "peerDependencies": {
-    "react": ">=16.8.0",
-    "react-dom": ">=16.8.0",
-    "@material-ui/core": ">=4.0.0",
-    "fontsource-roboto": "^4.0.0"
+    "react": ">=17.0.0",
+    "react-dom": ">=17.0.0",
+    "@mui/material": ">=5.0.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.12.10",
@@ -53,9 +52,13 @@
     "@storybook/addons": "^6.1.11",
     "@storybook/preset-create-react-app": "^3.1.5",
     "@storybook/react": "^6.1.11",
+    "@emotion/styled": "*",
+    "@emotion/react": "*",
+    "@mui/material": ">=5.10.4",
+    "@mui/icons-material": "*",
     "@types/node": "^14.14.20",
-    "@types/react": "^17.0.0",
-    "@types/react-dom": "^17.0.0",
+    "@types/react": "^17.0.2",
+    "@types/react-dom": "^17.0.2",
     "@typescript-eslint/eslint-plugin": "^4.12.0",
     "@typescript-eslint/parser": "^4.12.0",
     "babel-plugin-transform-es2015-modules-umd": "^6.24.1",
@@ -68,15 +71,16 @@
     "eslint-plugin-react": "^7.22.0",
     "eslint-plugin-react-hooks": "^4.2.0",
     "prettier": "^2.2.1",
-    "react": "^17.0.0",
-    "react-dom": "^17.0.0",
-    "react-scripts": "^4.0.1",
-    "typescript": "^4.1.3",
-    "@material-ui/icons": "^4.11.2",
-    "@material-ui/core": "^4.11.2"
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-scripts": "^4.0.3",
+    "typescript": "^4.1.3"
   },
   "dependencies": {
-  
-   
+
+  },
+  "resolutions": {
+    "@types/react": "^17.0.2",
+    "@typescript-eslint/parser": "^4.12.0"
   }
 }

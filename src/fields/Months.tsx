@@ -5,6 +5,7 @@ import CustomSelect from '../components/CustomSelect'
 import { DEFAULT_LOCALE_EN } from '../locale'
 import { classNames } from '../utils'
 import { UNITS } from '../constants'
+import { Typography } from "@mui/material"
 
 export default function Months(props: MonthsProps) {
   const {
@@ -34,7 +35,7 @@ export default function Months(props: MonthsProps) {
   return (
     <div className={internalClassName}>
       {locale.prefixMonths !== '' && (
-        <span>{locale.prefixMonths || DEFAULT_LOCALE_EN.prefixMonths}</span>
+        <Typography>{locale.prefixMonths || DEFAULT_LOCALE_EN.prefixMonths}</Typography>
       )}
 
       <CustomSelect

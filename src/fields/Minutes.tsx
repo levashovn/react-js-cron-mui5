@@ -5,6 +5,7 @@ import { MinutesProps } from '../types'
 import { DEFAULT_LOCALE_EN } from '../locale'
 import { classNames } from '../utils'
 import { UNITS } from '../constants'
+import { Typography } from "@mui/material"
 
 export default function Minutes(props: MinutesProps) {
   const {
@@ -34,15 +35,15 @@ export default function Minutes(props: MinutesProps) {
     <div className={internalClassName}>
       {period === 'hour'
         ? locale.prefixMinutesForHourPeriod !== '' && (
-            <span>
+            <Typography>
               {locale.prefixMinutesForHourPeriod ||
                 DEFAULT_LOCALE_EN.prefixMinutesForHourPeriod}
-            </span>
+            </Typography>
           )
         : locale.prefixMinutes !== '' && (
-            <span>
+            <Typography>
               {locale.prefixMinutes || DEFAULT_LOCALE_EN.prefixMinutes}
-            </span>
+            </Typography>
           )}
 
       <CustomSelect
@@ -66,10 +67,10 @@ export default function Minutes(props: MinutesProps) {
       />
 
       {period === 'hour' && locale.suffixMinutesForHourPeriod !== '' && (
-        <span>
+        <Typography>
           {locale.suffixMinutesForHourPeriod ||
             DEFAULT_LOCALE_EN.suffixMinutesForHourPeriod}
-        </span>
+        </Typography>
       )}
     </div>
   )

@@ -5,6 +5,7 @@ import { HoursProps } from '../types'
 import { DEFAULT_LOCALE_EN } from '../locale'
 import { classNames } from '../utils'
 import { UNITS } from '../constants'
+import { Typography } from "@mui/material"
 
 export default function Hours(props: HoursProps) {
   const {
@@ -33,7 +34,7 @@ export default function Hours(props: HoursProps) {
   return (
     <div className={internalClassName}>
       {locale.prefixHours !== '' && (
-        <span>{locale.prefixHours || DEFAULT_LOCALE_EN.prefixHours}</span>
+        <Typography>{locale.prefixHours || DEFAULT_LOCALE_EN.prefixHours}</Typography>
       )}
 
       <CustomSelect

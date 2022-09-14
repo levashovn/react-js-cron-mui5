@@ -410,13 +410,16 @@ function parseRange(rangeStr: string, context: string, unit: Unit) {
 function outOfRange(values: number[], unit: Unit) {
   const first = values[0]
   const last = values[values.length - 1]
-
   if (first < unit.min) {
-    return first
+    if (unit.type === "month-days" || unit.type === "months") {
+      return
+    }
+    else {
+      return first
+    }
   } else if (last > unit.max) {
     return last
   }
-
   return
 }
 
@@ -455,13 +458,11 @@ function applyInterval(values: number[], step?: number) {
  */
 export function parsePartArray(arr: number[], unit: Unit) {
   const values = sort(dedup(fixSunday(arr, unit)))
-
   if (values.length === 0) {
     return values
   }
 
   const value = outOfRange(values, unit)
-
   if (typeof value !== 'undefined') {
     throw new Error(`Value "${value}" out of range for ${unit.type}`)
   }

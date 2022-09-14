@@ -14,10 +14,11 @@ import {
   TableCell,
   TableBody,
   Typography,
-  TextFieldProps
-} from '@material-ui/core'
-import InfoIcon from '@material-ui/icons/Info';
-import DividerWithText from '../components/DividerWithText'
+  TextFieldProps,
+  Divider
+} from '@mui/material'
+import InfoIcon from '@mui/icons-material/Info';
+// import DividerWithText from '../components/DividerWithText'
 
 import Cron, { CronError, AllowEmpty, ClockFormat, PeriodType } from '../index'
 import {
@@ -27,7 +28,7 @@ import {
 } from './constants.stories'
 import { ClearButtonAction } from '../types'
 
-import './styles.stories.css'
+// import './styles.stories.css'
 
 export default {
   title: 'ReactJS Cron',
@@ -57,7 +58,7 @@ export function Demo() {
         onBlur={(event) => {
           setValue(event.target.value)
         }}
-        // 
+        //
         onChange={(event: any) => {
           customSetValue(event.target.value)
         }}
@@ -67,16 +68,16 @@ export function Demo() {
       // }}
       />
 
-      <DividerWithText>OR</DividerWithText>
+      <Divider/>
 
       <Cron value={value} setValue={customSetValue} onError={onError} />
 
       <div>
         <InfoIcon style={{ marginRight: 5 }} />
-        <span style={{ fontSize: 12 }}>
+        <Typography style={{ fontSize: 12 }}>
           Double click on a dropdown option to automatically select / unselect a
           periodicity
-        </span>
+        </Typography>
       </div>
 
       <p style={{ marginTop: 20 }}>
@@ -345,7 +346,7 @@ export function DynamicSettings() {
               changeValueonChange && setValue(event.target.value)
             }} />
 
-          <DividerWithText>OR</DividerWithText>
+          <Divider/>
         </>
       )}
 
@@ -403,20 +404,20 @@ export function LocalInput() {
 
       <div style={{ marginTop: 10 }}>
         <InfoIcon style={{ marginRight: 5 }} />
-        <span style={{ fontSize: 12 }}>
+        <Typography style={{ fontSize: 12 }}>
           The &quot;onChange&quot; event must be used instead of
           &quot;onChange&quot; to prevent a value change from the cron component
-        </span>
+        </Typography>
       </div>
       <div style={{ marginTop: 10 }}>
         <InfoIcon style={{ marginRight: 5 }} />
-        <span style={{ fontSize: 12 }}>
+        <Typography style={{ fontSize: 12 }}>
           Don&apos;t directly set the value of the Input with the prop
           &quot;value&quot;, you will not be able to edit it
-        </span>
+        </Typography>
       </div>
 
-      <DividerWithText>OR</DividerWithText>
+      <Divider/>
 
       <Cron value={value} setValue={customSetValue} />
     </div>
@@ -448,12 +449,12 @@ export function InputWithOnEnter() {
 
       <div style={{ marginTop: 10 }}>
         <InfoIcon style={{ marginRight: 5 }} />
-        <span style={{ fontSize: 12 }}>
+        <Typography style={{ fontSize: 12 }}>
           You can also add &quot;onEnter&quot; support to set the value
-        </span>
+        </Typography>
       </div>
 
-      <DividerWithText>OR</DividerWithText>
+      <Divider/>
 
       <Cron value={value} setValue={customSetValue} />
     </div>
@@ -468,7 +469,7 @@ export function ReadOnlyInput() {
     <div>
       <Input readOnly value={value} />
 
-      <DividerWithText>OR</DividerWithText>
+      <Divider/>
 
       <Cron value={value} setValue={setValue} />
     </div>
@@ -488,9 +489,9 @@ export function DefaultValue() {
 
       <div>
         <InfoIcon style={{ marginRight: 5 }} />
-        <span style={{ fontSize: 12 }}>
+        <Typography style={{ fontSize: 12 }}>
           The first value will always be used as default value
-        </span>
+        </Typography>
       </div>
     </div>
   )
@@ -511,15 +512,15 @@ export function DefaultPeriod() {
 
       <div>
         <InfoIcon style={{ marginRight: 5 }} />
-        <span style={{ fontSize: 12 }}>
+        <Typography style={{ fontSize: 12 }}>
           The &quot;defaultPeriod&quot; prop only work for empty default value
-        </span>
+        </Typography>
       </div>
       <div>
         <InfoIcon style={{ marginRight: 5 }} />
-        <span style={{ fontSize: 12 }}>
+        <Typography style={{ fontSize: 12 }}>
           If not set, the prop &quot;defaultPeriod&quot; is &quot;day&quot;
-        </span>
+        </Typography>
       </div>
     </div>
   )
@@ -539,9 +540,9 @@ export function Disabled() {
 
       <div>
         <InfoIcon style={{ marginRight: 5 }} />
-        <span style={{ fontSize: 12 }}>
+        <Typography style={{ fontSize: 12 }}>
           If not set, the prop &quot;disabled&quot; is false
-        </span>
+        </Typography>
       </div>
     </div>
   )
@@ -561,9 +562,9 @@ export function ReadOnly() {
 
       <div>
         <InfoIcon style={{ marginRight: 5 }} />
-        <span style={{ fontSize: 12 }}>
+        <Typography style={{ fontSize: 12 }}>
           If not set, the prop &quot;readOnly&quot; is false
-        </span>
+        </Typography>
       </div>
     </div>
   )
@@ -596,35 +597,35 @@ export function HumanizeLabels() {
         }}
       />
 
-      <DividerWithText>OR</DividerWithText>
+      <Divider/>
 
       <Cron value={value} setValue={customSetValue} onError={onError} />
 
       <div>
         <InfoIcon style={{ marginRight: 5 }} />
-        <span style={{ fontSize: 12 }}>
+        <Typography style={{ fontSize: 12 }}>
           If not set, the prop &quot;humanizeLabels&quot; is true
-        </span>
+        </Typography>
       </div>
       <div>
         <InfoIcon style={{ marginRight: 5 }} />
-        <span style={{ fontSize: 12 }}>
+        <Typography style={{ fontSize: 12 }}>
           Humanizes the labels in the cron component
-        </span>
+        </Typography>
       </div>
       <div>
         <InfoIcon style={{ marginRight: 5 }} />
-        <span style={{ fontSize: 12 }}>
+        <Typography style={{ fontSize: 12 }}>
           Works only for week days and months
-        </span>
+        </Typography>
       </div>
       <div>
         <InfoIcon style={{ marginRight: 5 }} />
-        <span style={{ fontSize: 12 }}>
+        <Typography style={{ fontSize: 12 }}>
           Can be used with &quot;locale&quot; prop and &quot;altMonths&quot; /
           &quot;altWeekDays&quot; properties in order to display translated
           labels
-        </span>
+        </Typography>
       </div>
     </div>
   )
@@ -658,7 +659,7 @@ export function HumanizeValue() {
         }}
       />
 
-      <DividerWithText>OR</DividerWithText>
+      <Divider/>
 
       <Cron
         value={value}
@@ -670,42 +671,42 @@ export function HumanizeValue() {
 
       <div>
         <InfoIcon style={{ marginRight: 5 }} />
-        <span style={{ fontSize: 12 }}>
+        <Typography style={{ fontSize: 12 }}>
           If not set, the prop &quot;humanizeValue&quot; is false
-        </span>
+        </Typography>
       </div>
       <div>
         <InfoIcon style={{ marginRight: 5 }} />
-        <span style={{ fontSize: 12 }}>
+        <Typography style={{ fontSize: 12 }}>
           The prop &quot;humanizeValue&quot; cannot be used to prohibit used of
           valid string value like &quot;MON,WED&quot;
-        </span>
+        </Typography>
       </div>
       <div>
         <InfoIcon style={{ marginRight: 5 }} />
-        <span style={{ fontSize: 12 }}>
+        <Typography style={{ fontSize: 12 }}>
           If the prop &quot;humanizeValue&quot; is true, the component will
           automatically convert a valid number value to string
-        </span>
+        </Typography>
       </div>
       <div>
         <InfoIcon style={{ marginRight: 5 }} />
-        <span style={{ fontSize: 12 }}>
+        <Typography style={{ fontSize: 12 }}>
           If the prop &quot;humanizeValue&quot; is false, the component will
           automatically convert a valid string value to number
-        </span>
+        </Typography>
       </div>
       <div>
         <InfoIcon style={{ marginRight: 5 }} />
-        <span style={{ fontSize: 12 }}>
+        <Typography style={{ fontSize: 12 }}>
           A valid string value can be in lowercase or uppercase
-        </span>
+        </Typography>
       </div>
       <div>
         <InfoIcon style={{ marginRight: 5 }} />
-        <span style={{ fontSize: 12 }}>
+        <Typography style={{ fontSize: 12 }}>
           Works only for week days and months
-        </span>
+        </Typography>
       </div>
     </div>
   )
@@ -739,7 +740,7 @@ export function HumanizeLabelsAndValue() {
         }}
       />
 
-      <DividerWithText>OR</DividerWithText>
+      <Divider/>
 
       <Cron
         value={value}
@@ -750,15 +751,15 @@ export function HumanizeLabelsAndValue() {
 
       <div>
         <InfoIcon style={{ marginRight: 5 }} />
-        <span style={{ fontSize: 12 }}>
+        <Typography style={{ fontSize: 12 }}>
           Humanizes in the cron component both the labels and the value
-        </span>
+        </Typography>
       </div>
       <div>
         <InfoIcon style={{ marginRight: 5 }} />
-        <span style={{ fontSize: 12 }}>
+        <Typography style={{ fontSize: 12 }}>
           Works only for week days and months
-        </span>
+        </Typography>
       </div>
     </div>
   )
@@ -788,22 +789,22 @@ export function LeadingZero() {
         }}
       />
 
-      <DividerWithText>OR</DividerWithText>
+      <Divider/>
 
       <Cron value={value} setValue={customSetValue} leadingZero={true} />
 
       <div>
         <InfoIcon style={{ marginRight: 5 }} />
-        <span style={{ fontSize: 12 }}>
+        <Typography style={{ fontSize: 12 }}>
           You can set the prop to a boolean or an array [&quot;minutes&quot;,
           &quot;hours&quot;, &quot;month-days&quot;]
-        </span>
+        </Typography>
       </div>
       <div>
         <InfoIcon style={{ marginRight: 5 }} />
-        <span style={{ fontSize: 12 }}>
+        <Typography style={{ fontSize: 12 }}>
           If not set, the prop &quot;leadingZero&quot; is &quot;never&quot;
-        </span>
+        </Typography>
       </div>
     </div>
   )
@@ -836,22 +837,22 @@ export function TrackError() {
 
       <div style={{ marginTop: 10 }}>
         <InfoIcon style={{ marginRight: 5 }} />
-        <span style={{ fontSize: 12 }}>
+        <Typography style={{ fontSize: 12 }}>
           Write a bad cron expression to trigger an error after the
           &quot;onChange&quot; event
-        </span>
+        </Typography>
       </div>
 
-      <DividerWithText>OR</DividerWithText>
+      <Divider/>
 
       <Cron value={value} setValue={customSetValue} onError={onError} />
 
       <div>
         <InfoIcon style={{ marginRight: 5 }} />
-        <span style={{ fontSize: 12 }}>
+        <Typography style={{ fontSize: 12 }}>
           Use prop &quot;onError&quot; to be able to know when the value is
           invalid
-        </span>
+        </Typography>
       </div>
     </div>
   )
@@ -882,7 +883,7 @@ export function DisableErrorStyle() {
         }}
       />
 
-      <DividerWithText>OR</DividerWithText>
+      <Divider/>
 
       <Cron
         value={value}
@@ -927,17 +928,17 @@ export function ClearButtonEmptyValue() {
 
       <div>
         <InfoIcon style={{ marginRight: 5 }} />
-        <span style={{ fontSize: 12 }}>
+        <Typography style={{ fontSize: 12 }}>
           The &quot;clearButtonAction&quot; prop allow you to empty the field or
           fill it with &quot;* * * * *&quot;
-        </span>
+        </Typography>
       </div>
       <div>
         <InfoIcon style={{ marginRight: 5 }} />
-        <span style={{ fontSize: 12 }}>
+        <Typography style={{ fontSize: 12 }}>
           If not set, the prop &quot;clearButtonAction&quot; is
           &quot;fill-with-every&quot;
-        </span>
+        </Typography>
       </div>
     </div>
   )
@@ -986,7 +987,7 @@ export function EmptyNeverAllowed() {
         }}
       />
 
-      <DividerWithText>OR</DividerWithText>
+      <Divider/>
 
       <Cron
         value={value}
@@ -997,10 +998,10 @@ export function EmptyNeverAllowed() {
 
       <div>
         <InfoIcon style={{ marginRight: 5 }} />
-        <span style={{ fontSize: 12 }}>
+        <Typography style={{ fontSize: 12 }}>
           If not set, the prop &quot;allowEmpty&quot; is
           &quot;for-default-value&quot;
-        </span>
+        </Typography>
       </div>
     </div>
   )
@@ -1033,7 +1034,7 @@ export function EmptyAlwaysAllowed() {
         }}
       />
 
-      <DividerWithText>OR</DividerWithText>
+      <Divider/>
 
       <Cron
         value={value}
@@ -1044,10 +1045,10 @@ export function EmptyAlwaysAllowed() {
 
       <div>
         <InfoIcon style={{ marginRight: 5 }} />
-        <span style={{ fontSize: 12 }}>
+        <Typography style={{ fontSize: 12 }}>
           If not set, the prop &quot;allowEmpty&quot; is
           &quot;for-default-value&quot;
-        </span>
+        </Typography>
       </div>
     </div>
   )
@@ -1134,7 +1135,7 @@ export function Shortcuts() {
         }}
       />
 
-      <DividerWithText>OR</DividerWithText>
+      <Divider/>
 
       <Cron
         value={value}
@@ -1145,17 +1146,17 @@ export function Shortcuts() {
 
       <div>
         <InfoIcon style={{ marginRight: 5 }} />
-        <span style={{ fontSize: 12 }}>
+        <Typography style={{ fontSize: 12 }}>
           If not set, the prop &quot;Shortcuts&quot; is [&quot;@yearly&quot;,
           &quot;@annually&quot;, &quot;@monthly&quot;, &quot;@weekly&quot;,
           &quot;@daily&quot;, &quot;@midnight&quot;, &quot;@hourly&quot;]
-        </span>
+        </Typography>
       </div>
       <div>
         <InfoIcon style={{ marginRight: 5 }} />
-        <span style={{ fontSize: 12 }}>
+        <Typography style={{ fontSize: 12 }}>
           Just pass true to activate all shortcuts including &quot;@reboot&quot;
-        </span>
+        </Typography>
       </div>
 
 
@@ -1214,7 +1215,7 @@ export function TwelveHourClock() {
         }}
       />
 
-      <DividerWithText>OR</DividerWithText>
+      <Divider/>
 
       <Cron
         value={value}
@@ -1228,7 +1229,7 @@ export function TwelveHourClock() {
 
 export function TwentyFourHourClock() {
   const inputRef = useRef<string>()
-  const defaultValue = '2 5,7,18 * * SUN'
+  const defaultValue = '2 5,7,18 1 2 SUN'
   const [value, setValue] = useState(defaultValue)
   const customSetValue = useCallback(
     (newValue: string) => {
@@ -1253,7 +1254,7 @@ export function TwentyFourHourClock() {
         }}
       />
 
-      <DividerWithText>OR</DividerWithText>
+      <Divider/>
 
       <Cron
         value={value}
@@ -1264,10 +1265,10 @@ export function TwentyFourHourClock() {
 
       <div>
         <InfoIcon style={{ marginRight: 5 }} />
-        <span style={{ fontSize: 12 }}>
+        <Typography style={{ fontSize: 12 }}>
           This prop override the prop &quot;leadingZero&quot; for
           &quot;hours&quot; and &quot;minutes&quot;
-        </span>
+        </Typography>
       </div>
     </div>
   )
@@ -1300,7 +1301,7 @@ export function FrenchLocale() {
         }}
       />
 
-      <DividerWithText>OU</DividerWithText>
+      <Divider/>
 
       <Cron
         locale={FRENCH_LOCALE}
@@ -1311,18 +1312,18 @@ export function FrenchLocale() {
 
       <div>
         <InfoIcon style={{ marginRight: 5 }} />
-        <span style={{ fontSize: 12 }}>
+        <Typography style={{ fontSize: 12 }}>
           The order of the &quot;locale&quot; properties &quot;weekDays&quot;,
           &quot;months&quot;, &quot;altMonths&quot; and &quot;altWeekDays&quot;
           is important! The index will be used as value
-        </span>
+        </Typography>
       </div>
       <div>
         <InfoIcon style={{ marginRight: 5 }} />
-        <span style={{ fontSize: 12 }}>
+        <Typography style={{ fontSize: 12 }}>
           Sunday must always be the first value of &quot;weekDays&quot; and
           &quot;altWeekDays&quot; property because it&apos;s &quot;0&quot;
-        </span>
+        </Typography>
       </div>
     </div>
   )
@@ -1341,10 +1342,10 @@ export function CustomENLocale() {
 
       <div>
         <InfoIcon style={{ marginRight: 5 }} />
-        <span style={{ fontSize: 12 }}>
+        <Typography style={{ fontSize: 12 }}>
           Not all translations need to be changed when using the prop
           &quot;locale&quot;
-        </span>
+        </Typography>
       </div>
     </div>
   )
@@ -1367,10 +1368,10 @@ export function NoPrefixAndSuffix() {
 
       <div>
         <InfoIcon style={{ marginRight: 5 }} />
-        <span style={{ fontSize: 12 }}>
+        <Typography style={{ fontSize: 12 }}>
           Using empty string &apos;&apos; for a prefix / suffix translation will
           remove the text
-        </span>
+        </Typography>
       </div>
     </div>
   )
@@ -1402,7 +1403,7 @@ export function CustomStyle() {
         }}
       />
 
-      <DividerWithText>OR</DividerWithText>
+      <Divider/>
 
       <Cron
         value={value}
@@ -1416,9 +1417,9 @@ export function CustomStyle() {
 
       <div>
         <InfoIcon style={{ marginRight: 5 }} />
-        <span style={{ fontSize: 12 }}>
+        <Typography style={{ fontSize: 12 }}>
           Custom CSS example (See file &quot;styles.stories.css&quot;):
-        </span>
+        </Typography>
         <ul>
           <li>Bold prefix and suffix</li>
           <li>Red prefix and suffix on error</li>
@@ -1429,9 +1430,9 @@ export function CustomStyle() {
       </div>
       <div>
         <InfoIcon style={{ marginRight: 5 }} />
-        <span style={{ fontSize: 12 }}>
+        <Typography style={{ fontSize: 12 }}>
           Available classes when using the prop &quot;className&quot;:
-        </span>
+        </Typography>
         <ul>
           <li>.my-project-cron</li>
           <li>.my-project-cron-error</li>

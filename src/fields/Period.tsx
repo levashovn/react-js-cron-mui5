@@ -1,9 +1,10 @@
 import React, { useCallback, useMemo } from 'react'
-import { Select, MenuItem } from '@material-ui/core'
+import { Select, MenuItem } from '@mui/material'
 
 import { PeriodProps } from '../types'
 import { DEFAULT_LOCALE_EN } from '../locale'
 import { classNames } from '../utils'
+import { Typography } from "@mui/material"
 
 export default function Period(props: PeriodProps) {
   const {
@@ -97,7 +98,7 @@ export default function Period(props: PeriodProps) {
   return (
     <div className={internalClassName}>
       {locale.prefixPeriod !== '' && (
-        <span>{locale.prefixPeriod || DEFAULT_LOCALE_EN.prefixPeriod}</span>
+        <Typography>{locale.prefixPeriod || DEFAULT_LOCALE_EN.prefixPeriod}</Typography>
       )}
 
       <Select

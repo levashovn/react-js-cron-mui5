@@ -1,5 +1,5 @@
 import React, { useMemo, useCallback } from 'react'
-import { Select, MenuItem } from '@material-ui/core'
+import { Select, MenuItem } from '@mui/material'
 
 import { CustomSelectProps } from '../types'
 import { DEFAULT_LOCALE_EN } from '../locale'
@@ -19,7 +19,7 @@ export default function CustomSelect(props: CustomSelectProps) {
     clockFormat,
     optionsList,
     unit,
-    ...selectProps,
+    ...selectProps
   } = props
 
   const stringValue = useMemo(() => {
@@ -82,7 +82,7 @@ export default function CustomSelect(props: CustomSelectProps) {
       return (
         <div>
           {testEveryValue[1]
-            ? `${locale.everyText || DEFAULT_LOCALE_EN.everyText} 
+            ? `${locale.everyText || DEFAULT_LOCALE_EN.everyText}
             ${testEveryValue[1]}`
             : cronValue}
         </div>
@@ -96,7 +96,8 @@ export default function CustomSelect(props: CustomSelectProps) {
     (event: any) => {
       let newValueOption: number[] = event.target.value;
       if (newValueOption.length == 0) {
-        newValueOption.push(0);
+        // Fix month-days and months
+        // newValueOption.push(unit.min);
       }
       newValueOption = Array.isArray(newValueOption)
         ? sort(newValueOption)

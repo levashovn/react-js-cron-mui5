@@ -1,8 +1,9 @@
 import { Dispatch, SetStateAction } from 'react'
-import {ButtonProps,SelectProps} from '@material-ui/core'
+import {ButtonProps,SelectProps} from '@mui/material'
 // External props
 
 export interface CronProps {
+
   /**
    * Cron value, the component is by design a controled component.
    * The first value will be the default value.
@@ -195,7 +196,7 @@ export type CronType =
   | 'hours'
   | 'minutes'
   | string
-export type LeadingZeroType = 'month-days' | 'hours' | 'minutes' | string
+export type LeadingZeroType = 'month-days' | 'months' | 'hours' | 'minutes' | string
 export type LeadingZero = boolean | LeadingZeroType[]
 export type ClockFormat = '24-hour-clock' | '12-hour-clock' | string
 export type ShortcutsType =
