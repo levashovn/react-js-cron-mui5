@@ -27,8 +27,30 @@ import {
   NO_PREFIX_SUFFIX_LOCALE,
 } from './constants.stories'
 import { ClearButtonAction } from '../types'
-
+import { red, orange } from '@mui/material/colors'
+import { createTheme} from '@mui/material/styles'
 // import './styles.stories.css'
+
+
+const testTheme = createTheme({
+  status: {
+    danger: red[500],
+  },
+  palette: {
+    primary: {
+      main: orange[500],
+    },
+  },
+});({
+  status: {
+    danger: red[500],
+  },
+  palette: {
+    primary: {
+      main: orange[500],
+    },
+  },
+});
 
 export default {
   title: 'ReactJS Cron',
@@ -70,7 +92,7 @@ export function Demo() {
 
       <Divider/>
 
-      <Cron value={value} setValue={customSetValue} onError={onError} />
+      <Cron theme={testTheme} value={value} setValue={customSetValue} onError={onError} />
 
       <div>
         <InfoIcon style={{ marginRight: 5 }} />

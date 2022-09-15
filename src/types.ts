@@ -1,5 +1,6 @@
 import { Dispatch, SetStateAction } from 'react'
 import {ButtonProps,SelectProps} from '@mui/material'
+import { CustomTheme } from '@mui/material/styles'
 // External props
 
 export interface CronProps {
@@ -11,6 +12,14 @@ export interface CronProps {
    * required
    */
   value: string
+
+  /**
+   * Cron value, the component is by design a controled component.
+   * The first value will be the default value.
+   *
+   * required
+   */
+   theme?: CustomTheme
 
   /**
    * Set the cron value, similar to onChange.

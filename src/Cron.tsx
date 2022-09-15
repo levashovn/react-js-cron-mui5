@@ -14,12 +14,31 @@ import { setValuesFromCronString, getCronStringFromValues } from './converter'
 import './styles.css'
 
 
+import { Theme, ThemeOptions, ThemeProvider } from '@mui/material/styles';
+
+declare module '@mui/material/styles' {
+  interface CustomTheme extends Theme {
+    [key: string]: any;
+  }
+  // allow configuration using `createTheme`
+  interface CustomThemeOptions extends ThemeOptions {
+    [key: string]: any;
+  }
+  export function createTheme(options?: CustomThemeOptions): CustomTheme;
+}
+
+import { createTheme } from '@mui/material/styles'
+
+
+
+
 
 export default function Cron(props: CronProps) {
   const {
 
     clearButton = true,
     clearButtonProps = {},
+    theme,
     clearButtonAction = 'fill-with-every',
     locale = DEFAULT_LOCALE_EN,
     value = '',
@@ -46,6 +65,7 @@ export default function Cron(props: CronProps) {
     clockFormat,
     ...selectProps
   } = props
+  const themeInUse = (!theme) ? createTheme() : theme
   const internalValueRef = useRef<string>(value)
   const defaultPeriodRef = useRef<PeriodType>(defaultPeriod)
   const [period, setPeriod] = useState<PeriodType | string | undefined>()
@@ -267,6 +287,7 @@ export default function Cron(props: CronProps) {
   const periodForRender = period || defaultPeriodRef.current
 
   return (
+    <ThemeProvider theme={themeInUse}>
       <div className={internalClassName}>
         <Period
           value={periodForRender}
@@ -365,5 +386,6 @@ export default function Cron(props: CronProps) {
             </>
           )}
       </div>
+    </ThemeProvider>
   )
 }
