@@ -262,6 +262,7 @@ export default function Cron(props: CronProps) {
             className={clearButtonClassName}
             disabled={disabled}
             onClick={handleClear}
+            {...otherClearButtonProps}
           >
             {locale.clearButtonText || DEFAULT_LOCALE_EN.clearButtonText}
           </Button>

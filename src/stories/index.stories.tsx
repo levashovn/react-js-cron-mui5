@@ -1433,7 +1433,7 @@ export function CustomStyle() {
         onError={onError}
         className='my-project-cron'
         clearButtonProps={{
-          color: "success"
+          variant: "contained"
         }}
       />
 
