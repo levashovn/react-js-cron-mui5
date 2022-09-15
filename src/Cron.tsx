@@ -260,8 +260,6 @@ export default function Cron(props: CronProps) {
           <Button
           style={{marginLeft:'10px'}}
             className={clearButtonClassName}
-            variant='contained'
-            color='secondary'
             disabled={disabled}
             onClick={handleClear}
           >

@@ -29,7 +29,7 @@ import {
 import { ClearButtonAction } from '../types'
 import { red, orange } from '@mui/material/colors'
 import { createTheme} from '@mui/material/styles'
-// import './styles.stories.css'
+import './styles.stories.css'
 
 
 const testTheme = createTheme({
@@ -1433,7 +1433,7 @@ export function CustomStyle() {
         onError={onError}
         className='my-project-cron'
         clearButtonProps={{
-          type: 'button',
+          color: "success"
         }}
       />
 
